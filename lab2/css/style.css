@@ -63,11 +63,6 @@ body{
 	/*NOTICE!!! */
 }
 
-.hov a:hover{
-	color:#00468C;
-	/*NOTICE!!! */
-}
-
 #showcase{
 	background-image:url('../images/bg.jpg');
 	background-position:center right;
