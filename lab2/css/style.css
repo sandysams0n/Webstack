@@ -14,7 +14,8 @@ body{
 	
 }
 .block a{
-	text-decoration: none;
+	text-decoration-line: underline;
+    text-decoration-style: wavy;
 	color:#004081;
 	margin-top: -20px;
 }
