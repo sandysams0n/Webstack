@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head> 
+
+<body>
+     <header>
+      <h1>Sign Up!</h1>
+     </header>
+  
+    <section class="container">
+           
+<form name="RegForm" action="/submit.php" onsubmit="return validation()" method="post" id="my-form">  
+      
+    <p>Name: <input type="text" size=65 name="Name"> </p>       
+    <p>E-mail: <input type="text" size=65 name="EMail">  </p>
+    <p>Password: <input type="text" size=65 name="Password"> </p> 
+    <p class="m">Birthday <br> <input type="Date" size=65 name="Birthday">  </p>   
+           
+    <p id="p">Preference     <br>
+        <select  class="m" type="text" value="" name="Subject"> 
+           <option>Fantasy</option> 
+            <option>Fiction</option> 
+            <option>Action</option> 
+            <option>Classics</option> 
+ 
+        </select>
+    </p><br>
+    <p>Comments:<input type="text" size=65 name="Comments"></p> 
+    <p><input type="submit" value="Submit" name="Submit" class="btn">      
+       <!-- <input type="reset" value="Reset" name="Reset" class="btn">  
+        //for reset button
+        --> 
+    </p>          
+</form> 
+</section>
+<script src="s.js"> </script> 
+
+</body> 
+</html> 
