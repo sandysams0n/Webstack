@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+<Book>
+    <Title>Pilgrim</Title>
+    <Author>J.Bunyan</Author>
+    <ISBN>12345</ISBN>
+    <Price>500</Price>
+    <Publisher>Harper</Publisher>
+    <Year>1995</Year>
+</Book>
+<Book>
+    <Title>Alchemist</Title>
+    <Author>P.Coelho</Author>
+    <ISBN>12346</ISBN>
+    <Price>250</Price>
+    <Publisher>Collins</Publisher>
+    <Year>2004</Year>
+</Book>
+<Book>
+    <Title>Wanted</Title>
+    <Author>A.Lynne</Author>
+    <ISBN>12347</ISBN>
+    <Price>470</Price>
+    <Publisher>Puffin</Publisher>
+    <Year>2017</Year>
+</Book>
+</Library>
