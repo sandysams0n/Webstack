@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sign up</title>
+<script>
+var myCookies = {};
+
+function saveCookies()
+{
+  myCookies["_user"] = document.getElementById("user").value;
+  myCookies["_uage"] = document.getElementById("age").value;
+  myCookies["_gender"] = document.getElementById("gender").value;
+  myCookies["_phone"] = document.getElementById("phone").value;
+  myCookies["_email"] = document.getElementById("email").value;
+  myCookies["_password"] = document.getElementById("password").value.toString();
+
+  document.cookie = "";
+  var expiresAttrib = new Date(Date.now()+60*1000).toString();
+  var cookieString = "";
+  for (var key in myCookies)
+  {
+    cookieString = key+"="+myCookies[key]+";"+expiresAttrib+";";
+    document.cookie = cookieString;
+  }
+
+  document.getElementById("out").innerHTML = document.cookie;
+}
+
+function loadCookies()
+{
+  myCookies = {};
+  var kv = document.cookie.split(";");
+  for (var id in kv)
+  {
+    var cookie = kv[id].split("=");
+    myCookies[cookie[0].trim()] = cookie[1];
+  }
+ 
+  document.getElementById("user").value = myCookies["_user"];
+  document.getElementById("age").value = myCookies["_uage"];
+  document.getElementById("gender").value = myCookies["_gender"];
+  document.getElementById("phone").value = myCookies["_phone"];
+  document.getElementById("email").value = myCookies["_email"];
+  document.getElementById("password").value = myCookies["_password"];
+}
+
+function validation()                                    
+{
+  myCookies["_user"] = document.getElementById("user").value;
+  myCookies["_uage"] = document.getElementById("age").value;
+  myCookies["_gender"] = document.getElementById("gender").value;
+  myCookies["_phone"] = document.getElementById("phone").value;
+  myCookies["_email"] = document.getElementById("email").value;
+  myCookies["_password"] = document.getElementById("password").value;
+
+    if (user.value == "")                                  
+    {
+        window.alert("Please enter your name.");
+        user.focus();
+        return false;
+    }
+
+    if (age.value == "")                                  
+    {
+        window.alert("Please enter your date of birth");
+        age.focus();
+        return false;
+    }
+
+    if (gender.selectedIndex < 1)                  
+    {
+        alert("Please choose your gender");
+        gender.focus();
+        return false;
+    }
+
+    if (phone.value == "")                          
+    {
+        window.alert("Please enter your phone number.");
+        phone.focus();
+        return false;
+    }
+       
+    if (email.value == "")                                  
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+
+    if (password.value == "")                        
+    {
+        window.alert("Please set your password");
+        password.focus();
+        return false;
+    }
+    return true;
+}
+
+</script>
+</head>
+<body>
+  <h1>Sign up</h1>
+<form class=container name="Form" action="/submit.php" onsubmit="return validation()" method="post">
+<p>Name<br><input type="text" id="user" placeholder="Name"></p></br>
+<p>Date of Birth<br><input type="date" id="age" placeholder="Date of birth"></p></br>
+<p>Gender
+  <select type="text" id="gender" value="" name="Gender">
+    <option>Select</option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+  </select>
+</p></br>
+<p>Phone Number<br><input type="tel" id="phone" placeholder="Phone number" pattern="[0-9]{10}" title="Must contain 10 digits"></p></br>
+<p>Email ID<br><input type="email" id="email" placeholder="Email ID"></p></br>
+<p>Password<br><input type="password" id="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase letter, one lowercase letter, and at least 8 or more characters"></p></br>
+<button onclick="saveCookies()">Save information</button>
+<button onclick="loadCookies()">Load information</button>
+
+<p id="out"></p>
+
+<p>    
+    <input class="button" type="reset" value="Reset" name="Reset">  
+</p>
+
+</form>
+</body>
+</html>
