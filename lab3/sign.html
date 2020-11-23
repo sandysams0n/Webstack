@@ -14,13 +14,14 @@
            
 <form name="RegForm" action="/submit.php" onsubmit="return validation()" method="post" id="my-form">  
       
-    <p>Name: <input type="text" size=65 name="Name"> </p>       
-    <p>E-mail: <input type="text" size=65 name="EMail">  </p>
-    <p>Password: <input type="text" size=65 name="Password"> </p> 
+    <p>Name: <input type="text" size=65 name="Name" placeholder="Name"> </p>       
+    <p>E-mail: <input type="text" size=65 name="EMail" placeholder="Email ID">  </p>
+    <p>Password: <input type="text" size=65 name="Password" placeholder="Password"> </p> 
     <p class="m">Birthday <br> <input type="Date" size=65 name="Birthday">  </p>   
            
     <p id="p">Preference     <br>
         <select  class="m" type="text" value="" name="Subject"> 
+          <option>      </option>
            <option>Fantasy</option> 
             <option>Fiction</option> 
             <option>Action</option> 
@@ -28,7 +29,7 @@
  
         </select>
     </p><br>
-    <p>Comments:<input type="text" size=65 name="Comments"></p> 
+    <p>Comments:<input type="text" size=65 name="Comments" placeholder="Say something"></p> 
     <p><input type="submit" value="Submit" name="Submit" class="btn">      
        <!-- <input type="reset" value="Reset" name="Reset" class="btn">  
         //for reset button
