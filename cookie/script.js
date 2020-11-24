@@ -1,8 +1,3 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Sign up</title>
-<script>
 var myCookies = {};
 
 function saveCookies()
@@ -42,6 +37,9 @@ function loadCookies()
   document.getElementById("phone").value = myCookies["_phone"];
   document.getElementById("email").value = myCookies["_email"];
   document.getElementById("password").value = myCookies["_password"];
+  document.getElementById("pref").value = myCookies["_pref"];
+  
+
 }
 
 function validation()                                    
@@ -52,6 +50,7 @@ function validation()
   myCookies["_phone"] = document.getElementById("phone").value;
   myCookies["_email"] = document.getElementById("email").value;
   myCookies["_password"] = document.getElementById("password").value;
+   myCookies["_pref"] = document.getElementById("pref").value;
 
     if (user.value == "")                                  
     {
@@ -71,6 +70,13 @@ function validation()
     {
         alert("Please choose your gender");
         gender.focus();
+        return false;
+    }
+
+    if (pref.selectedIndex < 1)                  
+    {
+        alert("Please select your preference");
+        pref.focus();
         return false;
     }
 
@@ -96,34 +102,3 @@ function validation()
     }
     return true;
 }
-
-</script>
-</head>
-<body>
-  <h1>Sign up</h1>
-<form class=container name="Form" action="/submit.php" onsubmit="return validation()" method="post">
-<p>Name<br><input type="text" id="user" placeholder="Name"></p></br>
-<p>Date of Birth<br><input type="date" id="age" placeholder="Date of birth"></p></br>
-<p>Gender
-  <select type="text" id="gender" value="" name="Gender">
-    <option>Select</option>
-    <option>Male</option>
-    <option>Female</option>
-    <option>Other</option>
-  </select>
-</p></br>
-<p>Phone Number<br><input type="tel" id="phone" placeholder="Phone number" pattern="[0-9]{10}" title="Must contain 10 digits"></p></br>
-<p>Email ID<br><input type="email" id="email" placeholder="Email ID"></p></br>
-<p>Password<br><input type="password" id="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase letter, one lowercase letter, and at least 8 or more characters"></p></br>
-<button onclick="saveCookies()">Save information</button>
-<button onclick="loadCookies()">Load information</button>
-
-<p id="out"></p>
-
-<p>    
-    <input class="button" type="reset" value="Reset" name="Reset">  
-</p>
-
-</form>
-</body>
-</html>
