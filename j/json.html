@@ -18,11 +18,11 @@
                 if(request.readyState==4)
                 {
                     var obj=JSON.parse(request.responseText);
-                    document.getElementById("book").innerHTML=obj.time;
-                    document.getElementById("name").innerHTML=obj.date;
-                    document.getElementById("year").innerHTML=obj.time;
-                    document.getElementById("copies").innerHTML=obj.date;
-                    document.getElementById("views").innerHTML=obj.date;
+                    document.getElementById("book").innerHTML=obj.book;
+                    document.getElementById("name").innerHTML=obj.name;
+                    document.getElementById("year").innerHTML=obj.Year;
+                    document.getElementById("copies").innerHTML=obj.copies;
+                    document.getElementById("views").innerHTML=obj.views;
                 }
             };
             request.open("GET",wsd.json,true);
