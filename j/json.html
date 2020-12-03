@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+     <h1>Book Details</h1>
+    <img src="lb.jpg">
+    <br>
+    <script>
+        function load()
+        {
+            let url=" http://time.jsontest.com ";
+            var request;
+            request=new XMLHttpRequest();
+            request.onreadystatechange=function()
+            {
+                if(request.readyState==4)
+                {
+                    var obj=JSON.parse(request.responseText);
+                    document.getElementById("book").innerHTML=obj.time;
+                    document.getElementById("name").innerHTML=obj.date;
+                    document.getElementById("year").innerHTML=obj.time;
+                    document.getElementById("copies").innerHTML=obj.date;
+                    document.getElementById("views").innerHTML=obj.date;
+                }
+            };
+            request.open("GET",wsd.json,true);
+            request.send();
+
+             setInterval(myFunction, 1000);
+
+            function myFunction() {
+            let d = new Date();
+            document.getElementById("demo").innerHTML=
+            d.getHours() + ":" +
+            d.getMinutes() + ":" +
+            d.getSeconds();
+            }
+        }
+    </script>
+
+    <style>
+    h1{
+    background: #f4f4f4;
+    padding: 1rem;
+     text-align: center;
+}
+
+.btn {
+  display: block;
+  width: 25%;
+  padding: 10px 15px;
+  border: 0;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+.btn:hover {
+  background: #444;
+}
+
+</style>
+
+</head>
+<body>
+    Title:<span id="book"></span><br>
+    author:<span id="name"></span><br>
+    Year of publishing:<span id="year"></span><br>
+    Copies sold:<span id="copies"></span><br>
+    Views on our site:<span id="views"></span><br>
+
+
+    <br>
+    <button type="button" class="btn" onclick="load()">Load Information</button>
+</body>
+</html>
