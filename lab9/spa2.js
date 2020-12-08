@@ -13,7 +13,7 @@ angular.module("myapp", ['ngRoute'])
             });
          })
          .controller('mainController',function($scope){
-            $scope.titles="Home Page"
+            $scope.titles="Welcome!"
 
          })
          .controller('onectrl',function($scope,$routeParams) {
